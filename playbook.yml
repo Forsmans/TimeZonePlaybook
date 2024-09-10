@@ -1,11 +1,4 @@
 - hosts: all
-  become: yes 
+  gather_facts: false
   tasks:
-    - name: Set timezone to Stockholm
-      timezone:
-        name: Europe/Stockholm
-      register: timezone_change
-
-    - name: Display timezone change result
-      debug:
-        var: timezone_change
+    - ping:
